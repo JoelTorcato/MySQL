@@ -1,15 +1,17 @@
 -- Criar a tabela EQUIPAS
 CREATE TABLE EQUIPAS (
-    e_id INT PRIMARY KEY,
-    e_nome VARCHAR(50)
+    e_numero INT PRIMARY KEY,
+    e_nome VARCHAR(50),
+    e_cidade VARCHAR(50),
+    e_director VARCHAR(50)
 );
 
 -- Inserir dados na tabela EQUIPAS
-INSERT INTO EQUIPAS (e_id, e_nome) VALUES
-(12, 'Equipe A'),
-(15, 'Equipe B'),
-(20, 'Equipe C'),
-(24, 'Equipe D');
+INSERT INTO EQUIPAS (e_numero, e_nome, e_cidade, e_director) VALUES
+(12, 'Académico', 'Porto', 'Mário'),
+(15, 'Universitário', 'Coimbra', 'João'),
+(20, 'Juventude', 'Braga', 'Silva'),
+(24, 'Tigres', 'Espinho', 'Cardoso');
 
 -- Criar a tabela TREINADORES
 CREATE TABLE TREINADORES (
@@ -118,7 +120,7 @@ INSERT INTO FILIACAO (f_jogador, f_equipa, f_anos, f_media) VALUES
 
 SELECT * FROM EQUIPAS;
 SELECT * FROM EQUIPAS WHERE e_id = 12;
-SELECT e_id, e_nome FROM EQUIPAS;
+SELECT e_numero, e_nome FROM EQUIPAS;
 SELECT j_numero, j_nome FROM JOGADORES WHERE j_idade > 30;
 SELECT ex_treinador FROM EXPERIENCIA WHERE ex_tipo = 'juniores' AND ex_anos >= 5;
 SELECT * FROM EXPERIENCIA WHERE ex_tipo = 'juniores' OR ex_anos > 10;

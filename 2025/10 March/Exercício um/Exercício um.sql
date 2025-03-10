@@ -1,15 +1,17 @@
 -- Criar a tabela EQUIPAS
 CREATE TABLE EQUIPAS (
-    e_id INT PRIMARY KEY,
-    e_nome VARCHAR(50)
+    e_numero INT PRIMARY KEY,
+    e_nome VARCHAR(50),
+    e_cidade VARCHAR(50),
+    e_director VARCHAR(50)
 );
 
 -- Inserir dados na tabela EQUIPAS
-INSERT INTO EQUIPAS (e_id, e_nome) VALUES
-(12, 'Equipe A'),
-(15, 'Equipe B'),
-(20, 'Equipe C'),
-(24, 'Equipe D');
+INSERT INTO EQUIPAS (e_numero, e_nome, e_cidade, e_director) VALUES
+(12, 'Académico', 'Porto', 'Mário'),
+(15, 'Universitário', 'Coimbra', 'João'),
+(20, 'Juventude', 'Braga', 'Silva'),
+(24, 'Tigres', 'Espinho', 'Cardoso');
 
 -- Ver estrutura da tabela EQUIPAS
 DESCRIBE EQUIPAS;

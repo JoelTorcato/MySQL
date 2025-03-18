@@ -1,0 +1,1 @@
+instrução SELECT é usada para selecionar dados de um banco de dados. Os dados retornados são armazenados em uma tabela de resultados, chamada de conjunto de resultados.

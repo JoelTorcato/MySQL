@@ -1,0 +1,9 @@
+SELECT { * | tabela.* | [tabela.]campo1 [AS alias1] [, [tabela.]campo2 [AS alias2] [, ...]]}
+FROM tabelaexpression [, ...] [IN externaldatabase]
+
+*                ● Especifica que todos os campos de uma determinada tabela ou consulta devem ser selecionados
+tabela.*         ● O nome da tabela de onde os campos serão selecionados
+campo1           ● O Nome dos campos a serem selecionados
+alias1           ● Um nome específico para o campo. Na Folha de Dados o nome aparece como o título da coluna
+tabelaexpression ● O nome da tabela ou consulta de onde são selecionados os campos
+externaldatabase ● O nome da Base de Dados que contém a tabela, caso não seja a base de dados atual

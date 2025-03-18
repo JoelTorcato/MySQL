@@ -1,0 +1,2 @@
+SELECT ALL retorna todos os registros, incluindo duplicados.
+SELECT DISTINCT retorna apenas registros únicos, removendo duplicados.

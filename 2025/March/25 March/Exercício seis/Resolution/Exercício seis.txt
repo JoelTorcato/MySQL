@@ -1,0 +1,23 @@
+a) SELECT COUNT (Cod_Fornecedor) AS NumerodeFornecedores FROM Produtos;
+Descrição: Conta o número total de fornecedores distintos na tabela Produtos.
+
+b) SELECT AVG (Qtd_Vendas) AS QtdVendas_Média FROM Vendas;
+Descrição: Calcula a média da quantidade de vendas na tabela Vendas.
+
+c) SELECT SUM (Preço) AS Preço_Total FROM Vendas;
+Descrição: Soma o valor total dos preços na tabela Vendas.
+
+d) SELECT MIN (Qtd_Vendas) AS QtdVendas_Mínimo FROM Vendas;
+Descrição: Encontra o menor valor de quantidade de vendas na tabela Vendas.
+
+e) SELECT MAX (Preço) AS Preço_Máximo FROM Vendas;
+Descrição: Encontra o maior valor de preço na tabela Vendas.
+
+f) SELECT SUM (Qtd_Vendas) / COUNT AS QtdVendas_Média FROM Vendas;
+Descrição: Calcula a média das vendas dividindo a soma das quantidades de vendas pelo número total de registros.
+
+g) SELECT COUNT (Nome_Cliente) AS NumerodeClientes FROM Clientes;
+Descrição: Conta o número total de clientes na tabela Clientes.
+
+h) SELECT AVG (Idade) AS Idade_Média FROM Fornecedores;
+Descrição: Calcula a média das idades dos fornecedores na tabela Fornecedores.

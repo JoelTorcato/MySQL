@@ -37,4 +37,23 @@ insert into Clube_Atleta values
   ('Águias','João Silva'),
   ('Bracarense','Ana Costa');
 
+-- a
 select * from Atleta where Idade_Atleta<25;
+
+-- b
+select Nome_Atleta, Nome_Clube from Clube_Atleta;
+
+-- c
+select count(*) as Total_Atletas from Clube_Atleta where Nome_Clube='Águias';
+
+-- d
+select avg(Atleta.Valor_Passe) from Atleta;
+
+-- e
+select Nome_Atleta
+from Clube_Atleta
+where Nome_Clube <> 'Bracarense'
+and Nome_Atleta in (select Nome_Atleta from Atleta where Idade_Atleta = 20);
+
+-- f
+select Nome_Atleta from Atleta where Telefone is null or Telefone = '';

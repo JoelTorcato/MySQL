@@ -55,5 +55,11 @@ from Clube_Atleta
 where Nome_Clube <> 'Bracarense'
 and Nome_Atleta in (select Nome_Atleta from Atleta where Idade_Atleta = 20);
 
--- f
+-- select
 select Nome_Atleta from Atleta where Telefone is null or Telefone = '';
+
+-- describe
+describe Clube;
+
+-- show
+show tables;

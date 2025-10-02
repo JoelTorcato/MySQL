@@ -14,7 +14,7 @@ create table Atleta(
   BI varchar(11),
   Idade_Atleta int,
   Valor_Passe int,
-  Telefone int(9)
+  Telefone varchar(9)
 );
 
 create table Clube_Atleta(
@@ -31,7 +31,7 @@ insert into Clube values
 
 insert into Atleta values
   ('João Silva','BI123',22,10000,'912345678'),
-  ('Ana Costa','BI456',20,15000,NULL);
+  ('Ana Costa','',20,15000,NULL);
 
 insert into Clube_Atleta values
   ('Águias','João Silva'),
@@ -55,7 +55,7 @@ from Clube_Atleta
 where Nome_Clube <> 'Bracarense'
 and Nome_Atleta in (select Nome_Atleta from Atleta where Idade_Atleta = 20);
 
--- select
+-- select (f)
 select Nome_Atleta from Atleta where Telefone is null or Telefone = '';
 
 -- describe
@@ -63,3 +63,32 @@ describe Clube;
 
 -- show
 show tables;
+
+-- 02.10.25
+
+-- a
+select Nome_Clube
+from Clube
+where Idade_Clube > 10;
+
+-- b
+update Atleta set Valor_Passe = 1000000
+where Nome_Atleta = 'Ana Costa';
+select * from Atleta;
+
+-- c
+delete from Atleta
+where Idade_Atleta > 35;
+
+-- d 
+select distinct Clube_Atleta.Nome_Clube
+from Clube_Atleta
+inner join Atleta on Clube_Atleta.Nome_Atleta = Atleta.Nome_Atleta
+where Atleta.BI is null or Atleta.BI = '';
+
+-- e
+select Nome_Atleta
+from Atleta
+where Nome_Atleta like 'A%';
+
+

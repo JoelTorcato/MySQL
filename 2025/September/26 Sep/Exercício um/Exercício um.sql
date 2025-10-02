@@ -11,10 +11,10 @@ create table Clube(
 
 create table Atleta(
   Nome_Atleta varchar(50) primary key,
-  BI varchar(50),
+  BI varchar(11),
   Idade_Atleta int,
   Valor_Passe int,
-  Telefone varchar(15)
+  Telefone int(9)
 );
 
 create table Clube_Atleta(

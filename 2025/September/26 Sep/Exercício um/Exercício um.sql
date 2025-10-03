@@ -98,7 +98,7 @@ where Atleta.BI is null or Atleta.BI = '';
 -- e
 select Nome_Atleta
 from Atleta
-where Nome_Atleta like 'A%';
+where Nome_Atleta like 'J%';
 
 -- f
 select Nome_Clube

@@ -58,7 +58,7 @@ from Alunos;
 -- 4.
 select NomeAluno
 from Alunos
-order by NomeAluno asc limit 1;
+order by NomeAluno limit 1;
 
 -- 5.
 select sum(D.CargaHorária)
@@ -78,3 +78,66 @@ select CodCurso, avg(Idade) as Media_Idade
 from Alunos
 group by CodCurso
 order by Media_Idade desc;
+
+-- 8.
+select count(*) from Alunos;
+
+-- 9.
+select NomeAluno from Alunos order by NomeAluno desc limit 1;
+
+-- 10.
+select avg(Idade) from Alunos where Morada = 'Rua Nova';
+
+-- 11.
+select count(*) as TotalCursos, count(case when CargaHorária is not null and CargaHorária > 0 then 1 end) as CursosComCarga from Cursos;
+
+-- 12.
+select avg(A.Idade)
+from Alunos A
+join Cursos C on A.CodCurso = C.CodCurso
+where C.NomeCurso = 'Curso Profissional de Tecnico de Gestao e Programacao de Sistemas Informaticos';
+
+-- 13.
+select count(*) from Alunos where Idade > 20;
+
+-- 14.
+select A.NomeAluno, count(AD.CodDisciplina) as NumDisciplinas
+from Alunos A
+join Cursos C on A.CodCurso = C.CodCurso
+join Alunos_Disciplinas AD on A.CodAluno = AD.CodAluno
+where C.NomeCurso = 'Curso Cientifico-humanistico de Linguas e Literaturas'
+group by A.CodAluno
+having NumDisciplinas > 1
+order by NumDisciplinas desc;
+
+-- 15.
+select D.NomeDisciplina, count(AD.CodAluno) as NumAlunos
+from Disciplinas D
+join Alunos_Disciplinas AD on D.CodDisciplina = AD.CodDisciplina
+group by D.CodDisciplina
+order by NumAlunos desc;
+
+-- 16.
+select min(Idade) from Alunos;
+
+-- 17.
+select A.NomeAluno, count(AD.CodDisciplina) as NumDisciplinas
+from Alunos A
+join Cursos C on A.CodCurso = C.CodCurso
+join Alunos_Disciplinas AD on A.CodAluno = AD.CodAluno
+where C.NomeCurso = 'Curso Cientifico-humanistico de Linguas e Literaturas'
+group by A.CodAluno
+order by NumDisciplinas desc;
+
+-- 18.
+select CodCurso, avg(Idade) as Media_Idade
+from Alunos
+group by CodCurso
+having Media_Idade < 19
+order by Media_Idade desc;
+
+-- 19.
+select A.NomeAluno, C.NomeCurso
+from Alunos A
+join Cursos C on A.CodCurso = C.CodCurso
+order by A.NomeAluno;

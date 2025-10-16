@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="d4638fa5-5f4b-4e8d-9868-90a227445804" name="MySQL 8 Mapping">
+      <data-sources db="3395b7a2-2213-4475-a577-a89f0c370850" ddl="3f629a71-3028-4432-881f-91f8fdfe4607" />
+      <scope>
+        <node kind="schema" qname="matrículas" />
+      </scope>
+    </mapping>
+  </component>
+</project>

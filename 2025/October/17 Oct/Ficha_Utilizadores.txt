@@ -1,0 +1,28 @@
+-- Exercício 1: criar utilizadores
+CREATE USER IF NOT EXISTS 'professor1'@'localhost' IDENTIFIED BY 'prof1pass';
+CREATE USER IF NOT EXISTS 'secretaria'@'localhost' IDENTIFIED BY 'secrpass';
+CREATE USER IF NOT EXISTS 'direcao'@'localhost' IDENTIFIED BY 'direcpass';
+
+-- Exercício 2: atribuir permissões
+GRANT SELECT, INSERT ON `Escola`.`Notas` TO 'professor1'@'localhost';
+GRANT SELECT ON `Escola`.`Alunos` TO 'secretaria'@'localhost';
+GRANT SELECT ON `Escola`.`Professores` TO 'secretaria'@'localhost';
+GRANT ALL PRIVILEGES ON `Escola`.* TO 'direcao'@'localhost';
+FLUSH PRIVILEGES;
+
+-- Exercício 3: testes (resultados esperados)
+-- Como 'professor1': INSERT em Notas -> funciona
+-- Como 'professor1': DELETE em Notas -> falha (permissão negada)
+
+-- Exercício 4: retirar permissões
+REVOKE SELECT ON `Escola`.`Professores` FROM 'secretaria'@'localhost';
+FLUSH PRIVILEGES;
+
+-- Exercício 5: apagar um utilizador
+DROP USER IF EXISTS 'professor1'@'localhost';
+FLUSH PRIVILEGES;
+
+-- Questões de Reflexão:
+-- 1) Para proteger os dados: só quem precisa acede; reduz erros e fugas de informação; permite identificar responsáveis.
+-- 2) Haveria maior risco de alterações e apagamentos acidentais ou maliciosos; perder-se-ia controlo e segurança dos dados.
+-- 3) GRANT dá permissões a um utilizador; REVOKE retira essas permissões.

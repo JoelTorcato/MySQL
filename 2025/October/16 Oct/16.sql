@@ -31,3 +31,5 @@ CREATE USER 'Abel'@'localhost' IDENTIFIED BY 'ferreira@caim';
 GRANT INSERT, UPDATE ON Escola.Alunos TO 'Abel'@'localhost';
 FLUSH PRIVILEGES;
 SHOW GRANTS FOR 'Abel'@'localhost';
+
+
